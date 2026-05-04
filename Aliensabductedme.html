@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type = "text/css" rel="stylesheet" href="../book/main.php">
+    <title>Aliens Abducted Me.com</title>
+</head>
+<body>
+    <main>
+        <div>
+            <p>Расскажите историю о похищении вас космическими пришельцами</p>
+            <form method="POST" action="../book/main.php" itunes-174@mail.ru>
+               <label for="firstname">Имя:</label>
+               <input type="text" id="firstname" name="firstname"/><br/>
+               <label for="lastname">Фамилия</label>
+               <input type="text" id="lastname" name="lastname"/><br/>
+               <label for="email" >Ваш адрес электронной почты</label>
+               <input type="text" id="email" name="email"/><br/>
+               <label for="whenithappened">Когда это произошло</label>
+               <input type="text" name="whenithappened" id="whenithappened"/><br/>
+               <label for="howlong">Как долго</label>
+               <input type="text" name="howlong" id="howlong"/><br/>
+               <label for="howmany">Сколько их было</label>
+               <input type="text" id="howmany" name="howmany"/><br/>
+               <label for="aliendescription">Опишите их</label>
+               <input type="text" neme="aliendescription" id="aliendescription"/><br/>
+               <label for="whattheydid">Что они делали</label>
+               <input type="text" id="whattheydid" name="whattheydid" /><br/>
+               <label for="fangspotted">Видели ли вы Фэнга</label><br/>
+               yes <input type="radio " id="fangspotted" name="fangspotted" value="yes" /><br/>
+               no <input type="radio" id="fangspotted" name="fangspotted" value="no" /><br/>
+               <img src="../book/fang.jpg" alt="Фэнг" width="145" height="100"/><br/>
+               <label for="other" id="other" name="other">Дополнительная Информация</label><br/>
+               <textarea name="other" id="other" placeholder="Дополнительная информация"></textarea><br/>
+               <input type="submit" value="Сообщение о похищении" name='submit' />
+            </form>
+        </div>
+    </main>
+</body>
+</html>
