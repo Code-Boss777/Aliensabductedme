@@ -56,6 +56,17 @@ $msg = "Пользователь $full_name сообщил о похищении
 } catch (PDOException $e) {
 die("Ошибка подключения или записи в БД: " . $e->getMessage());
 }
+<script>
+const test = document.querySelector('h2');
+test.addEventLestener('mousover', () => {
+    test.style.color = 'red';
+    test.ineerText = 'RuN Bitch!Aliens here!!';
+});
+test.addEventLestener('mosueout' () => {
+    test.style.color = 'black';
+    test.innerText = 'Космические пришельцы похищали меня';
+});
+</script>
 ?>
 
     <?php
