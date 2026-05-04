@@ -61,7 +61,7 @@ die("Ошибка подключения или записи в БД: " . $e->ge
 const test = document.querySelector('h2');
 test.addEventListener('mouseover', () => {
     test.style.color = 'red';
-    test.innerText = 'RuN Bitch!Aliens rпше  here!!';
+    test.innerText = 'RuN Bitch!Aliens r  here!!';
 });
 test.addEventListener('mouseout', () => {
     test.style.color = 'black';
