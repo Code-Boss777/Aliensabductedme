@@ -56,18 +56,19 @@ $msg = "Пользователь $full_name сообщил о похищении
 } catch (PDOException $e) {
 die("Ошибка подключения или записи в БД: " . $e->getMessage());
 }
+?>
 <script>
 const test = document.querySelector('h2');
-test.addEventLestener('mousover', () => {
+test.addEventListener('mouseover', () => {
     test.style.color = 'red';
-    test.ineerText = 'RuN Bitch!Aliens here!!';
+    test.innerText = 'RuN Bitch!Aliens rпше  here!!';
 });
-test.addEventLestener('mosueout' () => {
+test.addEventListener('mouseout', () => {
     test.style.color = 'black';
     test.innerText = 'Космические пришельцы похищали меня';
 });
 </script>
-?>
+
 
     <?php
         // $dbc = mysqli_connect($host, $user, $pass, $db_name)
