@@ -15,18 +15,25 @@ $charset = 'utf8mb4';
 $from = 'itunes-174@mail.ru';
 $subject = $_POST['subject'];
 $_text = $_POST['elvismail'];
-$stmt = $pdo->query($sql);
-//fetch вызов данных строки
-$row = $stmt->$fetch();
-//выполняем запрос ($stmt это объект подготовленного запроса к бд)
-$stmt = $pdo->query("SELECT first_name, last_name, email FROM email_list");
-//используем fetch(этот метод достает по 1 строке за раз), это замена msqli_fetch
-while ($row = $stmt->fetch()){
-    echo $row['first_name'] . '' . $row['last_name'] . '' . $row['email'].
-}
-
 $dsn = "mysql:host=$host;dbname=$db_name;charset=$charset";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ];
+try {
+    // СОЗДАЕМ ПЕРЕМЕННУЮ $pdo
+    $pdo = new PDO($dsn, $user, $pass, $options);
+} catch (\PDOException $e) {
+    die("Ошибка подключения: " . $e->getMessage());
+}
+$sql = "SELECT first_name, last_name, email FROM email_list";
+$stmt = $pdo->query($sql);
+//fetch вызов данных строки
+$row = $stmt->fetch();
+//выполняем запрос ($stmt это объект подготовленного запроса к бд)
+$stmt = $pdo->query("SELECT first_name, last_name, email FROM email_list");
+//используем fetch(этот метод достает по 1 строке за раз), это замена msqli_fetch
+while ($row = $stmt->fetch()){
+    echo $row['first_name'] . ' ' . $row['last_name'] . ' ' . $row['email'] . '<br />';
+}
+
