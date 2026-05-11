@@ -26,6 +26,7 @@ try {
 } catch (\PDOException $e) {
     die("Ошибка подключения: " . $e->getMessage());
 }
+//так же используют в запросах DELETE и тд.
 $sql = "SELECT first_name, last_name, email FROM email_list";
 $stmt = $pdo->query($sql);
 //fetch вызов данных строки
@@ -33,7 +34,7 @@ $row = $stmt->fetch();
 //выполняем запрос ($stmt это объект подготовленного запроса к бд)
 $stmt = $pdo->query("SELECT first_name, last_name, email FROM email_list");
 //используем fetch(этот метод достает по 1 строке за раз), это замена msqli_fetch
+
 while ($row = $stmt->fetch()){
     echo $row['first_name'] . ' ' . $row['last_name'] . ' ' . $row['email'] . '<br />';
 }
-

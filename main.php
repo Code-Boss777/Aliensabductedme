@@ -15,7 +15,7 @@ $pass = '';
 $charset = 'utf8mb4';
 //сбор данных из формы 
 $firstname = $_POST['firstname'] ?? '';
-$lastname = $_PSOT['lastname'] ?? '';
+$lastname = $_POST['lastname'] ?? '';
 $when_it_happened = $_POST['whenithappened'] ?? '';
 $how_long = $_POST['howlong'] ?? '';
 $how_many = $_POST['howmany'] ?? '';
@@ -26,7 +26,7 @@ $other = $_POST['other'] ?? '';
 $email = $_POST['email'] ?? '';
 $full_name = trim($firstname . ' ' . $lastname);
 
-//подключение к базе данных 
+//подключение к базе данных
 $dsn = "mysql:host=$host;dbname=$db_name;charset=$charset";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
