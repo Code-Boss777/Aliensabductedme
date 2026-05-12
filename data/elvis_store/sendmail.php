@@ -27,6 +27,8 @@ try {
     die("Ошибка подключения: " . $e->getMessage());
 }
 //так же используют в запросах DELETE и тд.
+if(!empty($subject)){
+    if(!empty($text)){
 $sql = "SELECT first_name, last_name, email FROM email_list";
 $stmt = $pdo->query($sql);
 //fetch вызов данных строки
@@ -38,3 +40,37 @@ $stmt = $pdo->query("SELECT first_name, last_name, email FROM email_list");
 while ($row = $stmt->fetch()){
     echo $row['first_name'] . ' ' . $row['last_name'] . ' ' . $row['email'] . '<br />';
 }
+    }
+};
+//управляющая конструкция if, формируем для исключения пустых писем
+
+// if($subject == '') {
+//     if($text == ''){
+//         echo 'give me more infotrmation in your email. <br/>;
+//     }
+// }
+
+//функции empty проверяет содержит ли переменная какие либо данные 
+//функция isset проверяет присвоено ли какое либо значение переменной
+// if(empty($subject)) {
+//     if(empty($text)) {
+//         echo 'give me more infotrmation in your email. <br/>;
+//     }
+// }
+
+//оператор отрицания !(воскл знак), реверсирует логику функции.
+// if(!empty($subject)) {
+//     if(!empty($text)) {
+// echo "no reaection";
+//     }
+// };
+
+
+
+
+
+
+
+
+
+?>
