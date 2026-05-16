@@ -75,14 +75,19 @@ else {
 // };
 if ($output_form){
     ?>
-    <form method="post" action="../elvis_store/sendmail.php">
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <label for="subject">Email Theme</label>
-<input type="text" name="subject" id="subject" /><br/>
+<input type="text" name="subject" id="subject" value="<?php echo $subject; ?>" /><br/>
 <label for="elvismail">Email data</label>
 <textarea name="elvismail" id="elvismail" rows="8" cols="60"></textarea><br/>
-<input type="submit" name="submit" value="Sender">
+<input type="submit" name="submit" value="<?php echo $text; ?>">
     </form>
     <?php
 }
+if (isset($_POST['submit'])){
+    ...
+}
+
+
 ?>
 
